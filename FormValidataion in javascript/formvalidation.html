@@ -1,0 +1,285 @@
+<html>
+
+<head>
+    <title> Student Registration Form </title>
+
+
+    <script type="text/javascript">
+
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+
+
+        function validate() {
+            var flag = true;
+
+            if (document.myForm.Name.value == "") {
+
+                document.myForm.Name.focus();
+                document.getElementById("sid").innerHTML = "Enter your name"
+                flag = false;
+
+            }
+            else if (/\d/.test(document.myForm.Name.value) == true) {
+
+                document.getElementById("sid").innerHTML = "Invalid name"
+                flag = false;
+
+            }
+            else {
+                document.getElementById("sid").innerHTML = " "
+
+
+            }
+            if (document.myForm.rollno.value == "") {
+
+                document.getElementById("rno").innerHTML = "Enter your rollno"
+                flag = false;
+            }
+            else if (/^[0-9]+$/.test(document.myForm.rollno.value) == false) {
+
+                document.getElementById("rno").innerHTML = "Invalid rollno"
+                flag = false;
+
+            }
+            else {
+                document.getElementById("rno").innerHTML = ""
+
+            }
+
+            if (document.myForm.Mobile.value == "") {
+
+                document.getElementById("mno").innerHTML = "Enter your Mobile Number"
+                flag = false;
+
+            }
+            else if (/^[0-9]+$/.test(document.myForm.Mobile.value) == false) {
+
+                document.getElementById("mno").innerHTML = "Invalid Mobile Number"
+                flag = false;
+
+            }
+            else {
+                document.getElementById("mno").innerHTML = " "
+            }
+            if (document.myForm.Email.value == "") {
+
+                document.getElementById("eid").innerHTML = "Enter your Email id"
+                flag = false;
+
+            }
+            else if (!validateEmail(document.myForm.Email.value)) {
+
+                document.getElementById("eid").innerHTML = "Invalid Email id"
+                flag = false;
+            }
+            else {
+                document.getElementById("eid").innerHTML = " "
+            }
+
+
+            if (document.myForm.city.value == "") {
+
+                document.getElementById("cty").innerHTML = "Enter your city"
+                flag = false;
+
+            }
+            else if (/\d/.test(document.myForm.city.value) == true) {
+
+                document.getElementById("cty").innerHTML = "Invalid"
+                flag = false;
+            }
+
+            else {
+                document.getElementById("cty").innerHTML = " "
+            }
+
+
+            if (document.myForm.Country.value == "") {
+
+                document.getElementById("ctry").innerHTML = "Enter your country"
+                flag = false;
+
+            }
+            else if (/\d/.test(document.myForm.Country.value) == true) {
+
+                document.getElementById("ctry").innerHTML = "Invalid"
+                flag = false;
+            }
+            else {
+                document.getElementById("ctry").innerHTML = " "
+            }
+            if (document.myForm.Pin.value == "") {
+
+                document.getElementById("pcode").innerHTML = "Enter pincode"
+                flag = false;
+
+            }
+            else {
+                document.getElementById("pcode").innerHTML = " "
+            }
+            if (flag == true) {
+                alert("The form is submitted");
+
+                document.getElementById("myForm").submit();
+
+            }
+
+
+
+        }
+
+
+    </script>
+
+
+
+</head>
+
+<body style=background-color:bisque;>
+
+    <form action="#" name="myForm" id="myForm" onsubmit="validate()" ;>
+        <h3 align="center"> STUDENT REGISTRATION FORM </h3>
+
+        <table align="center" cellpadding="9">
+            <tr>
+                <td> Name : </td>
+                <td> <input type="text" name="Name" id="Name" placeholder="Name" />
+                    <span id="sid" style="color:red" ;></span>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td> Rollno : </td>
+                <td><input type="text" name="rollno" id="rollno" />
+                    <span id="rno" style="color:red" ;></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Gender : </td>
+                <td> Male
+                    <input type="radio" name="Gender" id="male" value="male" />
+                    Female
+                    <input type="radio" name="Gender" id="female" value="female" />
+
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="year">Year:</label> </td>
+                <td>
+                    <select name="year">
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                    </select><br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Department : </td>
+                <td> CSE
+                    <input type="checkbox" name="Department" id="Department" value="CSE" />
+                    IT
+                    <input type="checkbox" name="Department" id="Department" value="IT" />
+                    ECE
+                    <input type="checkbox" name="Department" id="Department" value="ECE" />
+                    EEE
+                    <input type="checkbox" name="Department" id="Department" value="EEE" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> Section : </td>
+                <td> A
+                    <input type="radio" name="Section" id="Section" value="A" />
+                    B
+                    <input type="radio" name="Section" id="Section" value="B" />
+                    C
+                    <input type="radio" name="Section" id="Section" value="C" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td> Moblie No. </td>
+                <td>
+                    <input type="text" name="Mobile" id="Mobile" placeholder="Moblie Number" />
+                    <span id="mno" style="color:red" ;></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Email : </td>
+                <td> <input type="text" name="Email" id="Email" placeholder="Email Id" />
+                    <span id="eid" style="color:red" ;></span>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td> Address : </td>
+
+                <td>
+                    <textarea name="Address" rows="5" cols="20" placeholder="Address" />
+
+                    </textarea>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td> City :</td>
+
+                <td>
+                    <input type="text" name="city" id="city" placeholder="City" />
+                    <span id="cty" style="color:red" ;></span>
+                </td>
+
+            </tr>
+
+
+
+
+            <tr>
+                <td> Country : </td>
+                <td>
+                    <input type="text" name="Country" id="Country" />
+                    <span id="ctry" style="color:red" ;></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Pincode : </td>
+                <td>
+                    <input type="text" name="Pin" id="Pin" placeholder="Pincode" />
+                    <span id="pcode" style="color:red" ;></span>
+                </td>
+
+            </tr>
+
+
+
+            <tr>
+                <td align="right"> </td>
+                <td>
+                    <input type="button" Value="Submit" onclick="validate()" />
+                </td>
+            </tr>
+
+
+        </table>
+
+    </form>
+
+</body>
+
+</html>
